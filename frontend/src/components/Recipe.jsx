@@ -19,7 +19,7 @@ function Recipe() {
     }, [])
 
     const axiosGet = async(processing) => {
-        await axios.getAdapter(baseURL)
+        await axios.get(baseURL)
         .then(res => {
             if (processing) {
                 setRecipes(res.data)
@@ -29,12 +29,11 @@ function Recipe() {
 
     }
 
-
   return (
     <div> 
         <Card>
             <CardContent>
-                <p>{}</p>
+                <p>{recipes}</p>
             </CardContent>
         </Card>
   </div>
